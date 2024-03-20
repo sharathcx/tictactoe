@@ -1,5 +1,5 @@
 import random
-
+//elephant ring kitto?
 
 class TicTacToe:
 
