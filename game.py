@@ -71,7 +71,6 @@ class tictac():
                 if self.user[i] == 1 and self.user[j] == 2:
                     if 3 in self.empty :
                         x = 3
-                        self.user.append(3)
                         self.empty.remove(x)
                         y = 1
                         break
@@ -79,7 +78,6 @@ class tictac():
                 if self.user[i] == 1 and self.user[j] == 5:
                     if 9 in self.empty :
                         x = 9
-                        self.user.append(9)
                         self.empty.remove(x)
                         y = 1
 
@@ -88,7 +86,6 @@ class tictac():
                 if self.user[i] == 1 and self.user[j] == 4:
                     if 7 in self.empty :
                         x = 7
-                        self.user.append(7)
                         self.empty.remove(x)
                         y = 1
 
@@ -97,7 +94,6 @@ class tictac():
                 if self.user[i] == 2 and self.user[j] == 3:
                     if 1 in self.empty :
                         x = 1
-                        self.user.append(1)
                         self.empty.remove(x)
                         y = 1
 
@@ -106,7 +102,6 @@ class tictac():
                 if self.user[i] == 2 and self.user[j] == 5:
                     if 8 in self.empty :
                         x = 8
-                        self.user.append(8)
                         self.empty.remove(x)
                         y = 1
 
@@ -115,7 +110,6 @@ class tictac():
                 if self.user[i] == 3 and self.user[j] == 6:
                     if 9 in self.empty :
                         x = 9
-                        self.user.append(9)
                         self.empty.remove(x)
                         y = 1
 
@@ -124,7 +118,6 @@ class tictac():
                 if self.user[i] == 3 and self.user[j] == 5:
                     if 7 in self.empty :
                         x = 7
-                        self.user.append(7)
                         self.empty.remove(x)
                         y = 1
                         break
@@ -132,7 +125,6 @@ class tictac():
                 if self.user[i] == 4 and self.user[j] == 5:
                     if 6 in self.empty :
                         x = 6
-                        self.user.append(6)
                         self.empty.remove(x)
                         y = 1
 
@@ -141,7 +133,6 @@ class tictac():
                 if self.user[i] == 4 and self.user[j] == 7:
                     if 1 in self.empty :
                         x = 1
-                        self.user.append(1)
                         self.empty.remove(x)
                         y = 1
 
@@ -150,7 +141,6 @@ class tictac():
                 if self.user[i] == 5 and self.user[j] == 6:
                     if 4 in self.empty :
                         x = 4
-                        self.user.append(4)
                         self.empty.remove(x)
                         y = 1
 
@@ -159,7 +149,6 @@ class tictac():
                 if self.user[i] == 5 and self.user[j] == 8:
                     if 2 in self.empty :
                         x = 2
-                        self.user.append(2)
                         self.empty.remove(x)
                         y = 1
 
@@ -168,7 +157,6 @@ class tictac():
                 if self.user[i] == 5 and self.user[j] == 9:
                     if 1 in self.empty :
                         x = 1
-                        self.user.append(1)
                         self.empty.remove(x)
                         y = 1
 
@@ -177,7 +165,6 @@ class tictac():
                 if self.user[i] == 5 and self.user[j] == 7:
                     if 3 in self.empty :
                         x = 3
-                        self.user.append(3)
                         self.empty.remove(x)
                         y = 1
 
@@ -186,7 +173,6 @@ class tictac():
                 if self.user[i] == 6 and self.user[j] == 9:
                     if 3 in self.empty :
                         x = 3
-                        self.user.append(3)
                         self.empty.remove(x)
                         y = 1
 
@@ -195,7 +181,6 @@ class tictac():
                 if self.user[i] == 7 and self.user[j] == 8 :
                     if 9 in self.empty :
                         x = 9
-                        self.user.append(9)
                         self.empty.remove(x)
                         y = 1
 
@@ -204,7 +189,6 @@ class tictac():
                 if self.user[i] == 8 and self.user[j] == 9:
                     if 7 in self.empty :
                         x = 7
-                        self.user.append(7)
                         self.empty.remove(x)
                         y = 1
                         break
@@ -249,8 +233,9 @@ class tictac():
                     print("There are no more spaces to be filled, it's a tie.")
                     break
                 #there should be exit statements in the check win function that exit the loop incase there's a win
-                self.computerInsert()
+                cmove = self.computerInsert()
                 #remove cmove from the empty array
+                self.computer.append(cmove)
                 self.empty.sort()
                 self.computer.sort()
                 self.checkWin(self.computer)  #this will have a break thingy if there is a win
