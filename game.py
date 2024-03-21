@@ -234,7 +234,7 @@ class tictac():
                 while(move not in self.empty):
                     print("Invald Choice. The space has already been occupied.")
                     move = input("Enter the position where you want to place your move")
-                    move = int(move)
+                    move = int(move) 
                     #add a loop here to reenter the choice
 
                 #remove move from the empty array
