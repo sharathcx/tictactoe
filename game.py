@@ -51,13 +51,6 @@ class tictac():
         box8=Button(frame2,text=self.empty[8],width=12,height=6)
         box8.grid(row=2,column=2)
 
-
-
-        self.user = []
-        self.computer = []
-        self.empty = [1,2,3,4,5,6,7,8,9]
-
-
     def computerInsert(self):
         y = 0
         for i in range(0, len(self.user),1):
