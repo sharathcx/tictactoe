@@ -211,8 +211,20 @@ class tictac():
                         
 
 
-    def checkWin(self):
-        return
+    def checkWin(self, player_list: list):
+        if (len(self.empty) > 4):
+            return
+        for i in range(0, 7, 3):
+            if(i+1 in player_list and i+2 in player_list and i+3 in player_list):
+                print("Game won")
+                return
+        for j in range(1, 4):
+            if (j in player_list and j+3 in player_list and j+6 in player_list):
+                print("Game won")
+                return
+        if ((1 in player_list and 5 in player_list and 9 in player_list) or (3 in player_list and 5 in player_list and 7 in player_list)):
+            print("Game won")
+            return
         
     def playGame(self):
         while True:
