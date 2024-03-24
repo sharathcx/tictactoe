@@ -177,18 +177,19 @@ class tictac():
                         
 
 
-    def checkWin(self, player_list: list):
-        if (len(self.empty) > 4):
+    def checkWin(self):
+        empty_count = len([x for x in self.cells if x == " "])
+        if (empty_count > 4): #To check if the minimum number of moves have been played. Minimum of 5 moves is required, hence max no. of " " will be 9-5 = 4.
             return
         for i in range(0, 7, 3):
-            if(i+1 in player_list and i+2 in player_list and i+3 in player_list):
+            if((self.cells[i] == self.cells[i+1] == self.cells[i+2] == "X") or (self.cells[i] == self.cells[i+1] == self.cells[i+2] == "O")): #Checking horizontal rows
                 print("Game won")
                 return
-        for j in range(1, 4):
-            if (j in player_list and j+3 in player_list and j+6 in player_list):
+        for i in range(0, 3):
+            if((self.cells[i] == self.cells[i+3] == self.cells[i+6] == "X") or (self.cells[i] == self.cells[i+3] == self.cells[i+6] == "O")): #Checking vertical columns
                 print("Game won")
                 return
-        if ((1 in player_list and 5 in player_list and 9 in player_list) or (3 in player_list and 5 in player_list and 7 in player_list)):
+        if((self.cells[0] == self.cells[4] == self.cells[8] == "X") or (self.cells[0] == self.cells[4] == self.cells[8] == "O") or (self.cells[2] == self.cells[4] == self.cells[6] == "X") or (self.cells[2] == self.cells[4] == self.cells[6] == "X")): #Checking diagonals
             print("Game won")
             return
         
