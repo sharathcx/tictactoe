@@ -200,14 +200,19 @@ class tictac():
                 break
 
         if( y == 1):
-            return x
+            self.cells[x - 1 ] = "O"
+            self.computer.append(x)
+            self.empty.sort()
+            self.computer.sort() 
 
                 
         else:
             x = (random.choice(self.empty))
             self.empty.remove(x)
-            return x
-        
+            self.cells[x - 1 ] = "O"
+            self.computer.append(x)
+            self.empty.sort()
+            self.computer.sort() 
                         
 
 
@@ -247,13 +252,7 @@ class tictac():
                     print("There are no more spaces to be filled, it's a tie.")
                     break
                 #there should be exit statements in the check win function that exit the loop incase there's a win
-                cmove = int(self.computerInsert())
-                self.cells[cmove - 1 ] = "O"
-                #remove cmove from the empty array
-                self.computer.append(cmove)
-                self.empty.sort()
-                self.computer.sort()
-                self.checkWin(self.computer)  #this will have a break thingy if there is a win
+                
                 if not self.empty:
                     print("There are no more spaces to be filled, it's a tie.")
                     break
