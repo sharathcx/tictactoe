@@ -211,7 +211,7 @@ class tictac():
                     else:
                         print("Enter a valid position")
                         continue
-                    self.display()
+                   
                     if self.checkWin():
                         print("The player wins!")
                         break
@@ -238,7 +238,7 @@ class tictac():
                     else:
                         print("Enter a valid position")
                         continue
-                    self.display()
+                    
                     if self.checkWin():
                         print("Player 1 wins!")
                         break
@@ -250,7 +250,6 @@ class tictac():
                     else:
                         print("Enter a valid position")
                         continue
-                    self.display()
                     if self.checkWin():
                         print("Player 2 wins!")
                         break
