@@ -1,45 +1,45 @@
-
+import random
 class tictac():
     def __init__(self):
         self.user = []
         self.computer = []
-        self.empty = [1,2,3,4,5,6,7,8,9]
-        self.cells = [" "," "," "," "," "," "," "," "," "]
+        self.empty = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        self.cells = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
     def display(self):
-        print(f" {self.cells[0]} | {self.cells[1]} | {self.cells[2]} ")
+        print("Tic Tac Toe")
+        print(f" {self.cells[6]} | {self.cells[7]} | {self.cells[8]} ")
         print("---|---|---")
         print(f" {self.cells[3]} | {self.cells[4]} | {self.cells[5]} ")
         print("---|---|---")
-        print(f" {self.cells[6]} | {self.cells[7]} | {self.cells[8]} ")
+        print(f" {self.cells[0]} | {self.cells[1]} | {self.cells[2]} ")
 
     def computerInsert(self):
         y = 0
-        for i in range(0, len(self.user),1):
-            for j in range(i,len(self.user),1):
+        for i in range(0, len(self.user), 1):
+            for j in range(i, len(self.user), 1):
 
                 if self.user[i] == None:
                     x = random.choice(self.empty)
                     self.empty.remove(x)
                     y = 1
                     break
-                    
 
                 if self.user[i] != None and self.user[j] == None:
                     x = random.choice(self.empty)
                     self.empty.remove(x)
                     y = 1
                     break
-                
+
                 if self.user[i] == 1 and self.user[j] == 2:
-                    if 3 in self.empty :
+                    if 3 in self.empty:
                         x = 3
                         self.empty.remove(x)
                         y = 1
                         break
-                
+
                 if self.user[i] == 1 and self.user[j] == 5:
-                    if 9 in self.empty :
+                    if 9 in self.empty:
                         x = 9
                         self.empty.remove(x)
                         y = 1
@@ -47,7 +47,7 @@ class tictac():
                         break
 
                 if self.user[i] == 1 and self.user[j] == 4:
-                    if 7 in self.empty :
+                    if 7 in self.empty:
                         x = 7
                         self.empty.remove(x)
                         y = 1
@@ -55,7 +55,7 @@ class tictac():
                         break
 
                 if self.user[i] == 2 and self.user[j] == 3:
-                    if 1 in self.empty :
+                    if 1 in self.empty:
                         x = 1
                         self.empty.remove(x)
                         y = 1
@@ -63,7 +63,7 @@ class tictac():
                         break
 
                 if self.user[i] == 2 and self.user[j] == 5:
-                    if 8 in self.empty :
+                    if 8 in self.empty:
                         x = 8
                         self.empty.remove(x)
                         y = 1
@@ -71,7 +71,7 @@ class tictac():
                         break
 
                 if self.user[i] == 3 and self.user[j] == 6:
-                    if 9 in self.empty :
+                    if 9 in self.empty:
                         x = 9
                         self.empty.remove(x)
                         y = 1
@@ -79,14 +79,14 @@ class tictac():
                         break
 
                 if self.user[i] == 3 and self.user[j] == 5:
-                    if 7 in self.empty :
+                    if 7 in self.empty:
                         x = 7
                         self.empty.remove(x)
                         y = 1
                         break
 
                 if self.user[i] == 4 and self.user[j] == 5:
-                    if 6 in self.empty :
+                    if 6 in self.empty:
                         x = 6
                         self.empty.remove(x)
                         y = 1
@@ -94,7 +94,7 @@ class tictac():
                         break
 
                 if self.user[i] == 4 and self.user[j] == 7:
-                    if 1 in self.empty :
+                    if 1 in self.empty:
                         x = 1
                         self.empty.remove(x)
                         y = 1
@@ -102,7 +102,7 @@ class tictac():
                         break
 
                 if self.user[i] == 5 and self.user[j] == 6:
-                    if 4 in self.empty :
+                    if 4 in self.empty:
                         x = 4
                         self.empty.remove(x)
                         y = 1
@@ -110,7 +110,7 @@ class tictac():
                         break
 
                 if self.user[i] == 5 and self.user[j] == 8:
-                    if 2 in self.empty :
+                    if 2 in self.empty:
                         x = 2
                         self.empty.remove(x)
                         y = 1
@@ -118,7 +118,7 @@ class tictac():
                         break
 
                 if self.user[i] == 5 and self.user[j] == 9:
-                    if 1 in self.empty :
+                    if 1 in self.empty:
                         x = 1
                         self.empty.remove(x)
                         y = 1
@@ -126,7 +126,7 @@ class tictac():
                         break
 
                 if self.user[i] == 5 and self.user[j] == 7:
-                    if 3 in self.empty :
+                    if 3 in self.empty:
                         x = 3
                         self.empty.remove(x)
                         y = 1
@@ -134,15 +134,15 @@ class tictac():
                         break
 
                 if self.user[i] == 6 and self.user[j] == 9:
-                    if 3 in self.empty :
+                    if 3 in self.empty:
                         x = 3
                         self.empty.remove(x)
                         y = 1
 
                         break
 
-                if self.user[i] == 7 and self.user[j] == 8 :
-                    if 9 in self.empty :
+                if self.user[i] == 7 and self.user[j] == 8:
+                    if 9 in self.empty:
                         x = 9
                         self.empty.remove(x)
                         y = 1
@@ -150,57 +150,62 @@ class tictac():
                         break
 
                 if self.user[i] == 8 and self.user[j] == 9:
-                    if 7 in self.empty :
+                    if 7 in self.empty:
                         x = 7
                         self.empty.remove(x)
                         y = 1
                         break
-                
-                
-            if(y == 1):
+
+            if (y == 1):
                 break
 
-        if( y == 1):
-            self.cells[x - 1 ] = "O"
+        if (y == 1):
+            self.cells[x - 1] = "O"
             self.computer.append(x)
             self.empty.sort()
-            self.computer.sort() 
+            self.computer.sort()
 
-                
+
         else:
             x = (random.choice(self.empty))
             self.empty.remove(x)
-            self.cells[x - 1 ] = "O"
+            self.cells[x - 1] = "O"
             self.computer.append(x)
             self.empty.sort()
-            self.computer.sort() 
-                        
-
+            self.computer.sort()
 
     def checkWin(self):
         empty_count = len([x for x in self.cells if x == " "])
-        if (empty_count > 4): #To check if the minimum number of moves have been played. Minimum of 5 moves is required, hence max no. of " " will be 9-5 = 4.
+        if (
+                empty_count > 4):  # To check if the minimum number of moves have been played. Minimum of 5 moves is required, hence max no. of " " will be 9-5 = 4.
             return False
         for i in range(0, 7, 3):
-            if((self.cells[i] == self.cells[i+1] == self.cells[i+2] == "X") or (self.cells[i] == self.cells[i+1] == self.cells[i+2] == "O")): #Checking horizontal rows
+            if ((self.cells[i] == self.cells[i + 1] == self.cells[i + 2] == "X") or (
+                    self.cells[i] == self.cells[i + 1] == self.cells[i + 2] == "O")):  # Checking horizontal rows
                 return True
         for i in range(0, 3):
-            if((self.cells[i] == self.cells[i+3] == self.cells[i+6] == "X") or (self.cells[i] == self.cells[i+3] == self.cells[i+6] == "O")): #Checking vertical columns
+            if ((self.cells[i] == self.cells[i + 3] == self.cells[i + 6] == "X") or (
+                    self.cells[i] == self.cells[i + 3] == self.cells[i + 6] == "O")):  # Checking vertical columns
                 return True
-        if((self.cells[0] == self.cells[4] == self.cells[8] == "X") or (self.cells[0] == self.cells[4] == self.cells[8] == "O") or (self.cells[2] == self.cells[4] == self.cells[6] == "X") or (self.cells[2] == self.cells[4] == self.cells[6] == "X")): #Checking diagonals
+        if ((self.cells[0] == self.cells[4] == self.cells[8] == "X") or (
+                self.cells[0] == self.cells[4] == self.cells[8] == "O") or (
+                self.cells[2] == self.cells[4] == self.cells[6] == "X") or (
+                self.cells[2] == self.cells[4] == self.cells[6] == "X")):  # Checking diagonals
             return True
         return False
-        
+
     def playGame(self):
         while True:
             player = input("Single or Multiplayer?")
             if player == "Single":
-                #single-player logic
+                # single-player logic
                 while self.empty:
-                    user_inp = int(input("Enter the index you want to insert"))    #user input given in playgame fun. since there's no separate function
+                    user_inp = int(input(
+                        "Enter the index you want to insert"))  # user input given in playgame fun. since there's no separate function
                     if user_inp in self.empty:
                         self.empty.remove(user_inp)
                         self.cells[user_inp - 1] = "X"
+                        self.display()
                     else:
                         print("Enter a valid position")
                         continue
@@ -208,23 +213,25 @@ class tictac():
                         print("The player wins!")
                         break
                     self.computerInsert()
+                    self.display()
                     if self.checkWin():
                         print("The computer wins!")
                         break
-                    
-                #play again
+
+                # play again
                 again = input("Would you like to play another game?")
                 if again == "yes":
                     continue
                 else:
                     break
-            elif player == "Multiplayer" :
-                #multi-player logic
+            elif player == "Multiplayer":
+                # multi-player logic
                 while self.empty:
                     user_1 = int(input("Player 1, enter the index you want to insert"))
                     if user_1 in self.empty:
                         self.empty.remove(user_1)
                         self.cells[user_1 - 1] = "X"
+                        self.display()
                     else:
                         print("Enter a valid position")
                         continue
@@ -235,6 +242,7 @@ class tictac():
                     if user_2 in self.empty:
                         self.empty.remove(user_2)
                         self.cells[user_2 - 1] = "O"
+                        self.display()
                     else:
                         print("Enter a valid position")
                         continue
@@ -242,7 +250,7 @@ class tictac():
                         print("Player 2 wins!")
                         break
 
-                #play again
+                # play again
                 again = input("Would you like to play another game?")
                 if again == "yes":
                     continue
@@ -252,7 +260,7 @@ class tictac():
                 print("Enter either Single or Multiplayer")
 
         return
-    
 
-Tc= tictac()
+
+Tc = tictac()
 Tc.playGame()
