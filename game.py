@@ -198,12 +198,16 @@ class tictac():
 
     def playGame(self):
         while True:
-            player = input("Single or Multiplayer?")
-            if player == "Single":
-                # single-player logic
-                while self.empty:
-                    user_inp = int(input(
-                        "Enter the index you want to insert"))  # user input given in playgame fun. since there's no separate function
+            while True:
+                player = input("Single or Multiplayer?")
+                if player != "Single" or player != "Multiplayer":
+                    break
+
+            while self.empty:
+
+                if player == "Single":
+                
+                    user_inp = int(input("Enter the index you want to insert"))  # user input given in playgame fun. since there's no separate function
                     if user_inp in self.empty:
                         self.empty.remove(user_inp)
                         self.cells[user_inp - 1] = "X"
@@ -221,16 +225,8 @@ class tictac():
                         print("The computer wins!")
                         break
 
-                # play again
-                again = input("Would you like to play another game?")
-                if again == "yes":
-                    self.cells = [" " for x in range(9)]
-                    continue
-                else:
-                    break
-            elif player == "Multiplayer":
-                # multi-player logic
-                while self.empty:
+                elif player == "Multiplayer":
+
                     user_1 = int(input("Player 1, enter the index you want to insert"))
                     if user_1 in self.empty:
                         self.empty.remove(user_1)
@@ -243,6 +239,11 @@ class tictac():
                     if self.checkWin():
                         print("Player 1 wins!")
                         break
+
+                    if not self.checkWin() and len(self.empty)==0:
+                        print("The match is a draw!") 
+                        break
+
                     user_2 = int(input("Player 2, enter the index you want to insert"))
                     if user_2 in self.empty:
                         self.empty.remove(user_2)
@@ -251,19 +252,23 @@ class tictac():
                     else:
                         print("Enter a valid position")
                         continue
+
                     if self.checkWin():
                         print("Player 2 wins!")
                         break
+           
+                    if not self.checkWin() and len(self.empty)==0:
+                        print("The match is a draw!") 
 
-                # play again
-                again = input("Would you like to play another game?")
-                if again == "yes":
-                    self.cells = [" " for x in range(9)]
-                    continue
-                else:
-                    break
+            again = input("Would you like to play another game?")
+            if again == "yes":
+                self.cells = [" " for x in range(9)]
+                self.user = []
+                self.computer = []
+                self.empty = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                continue
             else:
-                print("Enter either Single or Multiplayer")
+                break
 
         return
 
