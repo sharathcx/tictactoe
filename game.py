@@ -224,6 +224,7 @@ class tictac():
                 # play again
                 again = input("Would you like to play another game?")
                 if again == "yes":
+                    self.cells = [" " for x in range(9)]
                     continue
                 else:
                     break
@@ -257,6 +258,7 @@ class tictac():
                 # play again
                 again = input("Would you like to play another game?")
                 if again == "yes":
+                    self.cells = [" " for x in range(9)]
                     continue
                 else:
                     break
