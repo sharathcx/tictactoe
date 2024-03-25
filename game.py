@@ -193,35 +193,66 @@ class tictac():
         
     def playGame(self):
         while True:
-            while self.empty:
-                move = input("Enter the position where you want to place your move")
-                move = int(move)
-                while(move not in self.empty):
-                    print("Invald Choice. The space has already been occupied.")
-                    move = input("Enter the position where you want to place your move")
-                    move = int(move) 
-                    #add a loop here to reenter the choice
-
-                #remove move from the empty array
-                self.empty.remove(move)
-                self.empty.sort()
-                self.user.append(move)
-                self.user.sort()
-                self.checkWin(self.user)  #this will have a break thingy if there is a win
-                if not self.empty:
-                    print("There are no more spaces to be filled, it's a tie.")
+            player = input("Single or Multiplayer?")
+            if player == "Single":
+                #single-player logic
+                while self.empty:
+                    user_inp = int(input("Enter the index you want to insert"))    #user input given in playgame fun. since there's no separate function
+                    if user_inp in self.empty:
+                        self.empty.remove(user_inp)
+                        self.cells[user_inp - 1] = "X"
+                    else:
+                        print("Enter a valid position")
+                        continue
+                    if self.checkWin():
+                        print("The player wins!")
+                        break
+                    self.computerInsert()
+                    if self.checkWin():
+                        print("The computer wins!")
+                        break
+                    
+                #play again
+                again = input("Would you like to play another game?")
+                if again == "yes":
+                    continue
+                else:
                     break
-                #there should be exit statements in the check win function that exit the loop incase there's a win
-                
-                if not self.empty:
-                    print("There are no more spaces to be filled, it's a tie.")
-                    break
-                
-            choice = input("Would you like to play another game?")
-            if choice == 'No': #no podanum da yes illa :)
-                break
-            
-            return
+            elif player == "Multiplayer" :
+                #multi-player logic
+                while self.empty:
+                    user_1 = int(input("Player 1, enter the index you want to insert"))
+                    if user_1 in self.empty:
+                        self.empty.remove(user_1)
+                        self.cells[user_1 - 1] = "X"
+                    else:
+                        print("Enter a valid position")
+                        continue
+                    if self.checkWin():
+                        print("Player 1 wins!")
+                        break
+                    user_2 = int(input("Player 2, enter the index you want to insert"))
+                    if user_2 in self.empty:
+                        self.empty.remove(user_2)
+                        self.cells[user_2 - 1] = "O"
+                    else:
+                        print("Enter a valid position")
+                        continue
+                    if self.checkWin():
+                        print("Player 2 wins!")
+                        break
 
+                #play again
+                again = input("Would you like to play another game?")
+                if again == "yes":
+                    continue
+                else:
+                    break
+            else:
+                print("Enter either Single or Multiplayer")
+
+        return
+    
 
 Tc= tictac()
+Tc.playGame()
