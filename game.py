@@ -1,4 +1,6 @@
 import random
+
+
 class tictac():
     def __init__(self):
         self.user = []
